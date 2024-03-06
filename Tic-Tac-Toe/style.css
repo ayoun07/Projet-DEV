@@ -1,0 +1,91 @@
+/* styles.css*/
+
+h1 {
+    color:darkgreen;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+#userContent, #oppContent {
+    font-weight: bold; 
+    margin: 0;
+}
+
+#valueCont {
+    text-align: center;
+    font-weight: bold;
+}
+
+#whosTurn {
+    text-align: center;
+    font-weight: bold;
+}
+
+.identification {
+    text-align: center;
+    font-weight: bold;
+}
+
+.container1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.but {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;  
+    margin-top: 10px; 
+}
+
+.but:hover {
+    background-color:grey;
+    color: black;
+}
+
+.img {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#loading {
+    width: 30px;
+    height: auto;
+    margin-top: 10px;
+}
+
+#bigCont {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 35vh; 
+    margin: auto;
+}
+
+#cont {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    width: 240px; 
+}
+
+.btn {
+    width: 70px; 
+    height: 70px; 
+    margin: 5px; 
+}
