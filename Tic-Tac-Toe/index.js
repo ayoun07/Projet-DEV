@@ -33,7 +33,8 @@ io.on("connection", (socket) => {
 
                 let obj = {
                     p1: p1obj,
-                    p2:p2obj
+                    p2: p2obj,
+                    sum:1
                 }
                 playingArray.push(obj)
 
@@ -45,6 +46,23 @@ io.on("connection", (socket) => {
             }
         }
 
+    })
+
+    socket.on("palying", (e) => {
+        if (e.value == "X") {
+            let objToChange = playingArray.find(obj => obj.p1.p1name === e.name)
+            
+            objToChange.p1.p1move = e.id
+            objToChange.sum=objToChange.sum+1
+        }
+        else if (e.value == "O") {
+            let objToChange = playingArray.find(obj => obj.p1.p1name === e.name)
+            
+            objToChange.p1.p1move = e.id
+            objToChange.sum=objToChange.sum+1
+        }
+
+        io.emit("playing",{allPlayers:playingArray})
     })
 })
 

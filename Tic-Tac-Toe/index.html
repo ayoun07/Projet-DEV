@@ -105,9 +105,46 @@
         document.getElementById("oppName").innerText=oppName
         document.getElementById("value").innerText=value
 
-        const currentPlayer = value === "X" ? "O" : "X";
-        document.getElementById("whosTurn").innerText = `${currentPlayer}'s Turn`;
+        /*const currentPlayer = value === "X" ? "O" : "X";
+        document.getElementById("whosTurn").innerText = `${currentPlayer}'s Turn`;*/
         
     });
+
+    document.querySelectorAll(".btn").forEach(e=>{
+        e.addEventListener("click",function(){
+            let value = document.getElementById("value").innerText
+            e.innerText = value
+
+            socket.emit("playing", {value:value, id:e.id, name:name})
+        })
+    })
+
+    socket.on("playing",(e)=>{
+         const foundobj=(e.allPlayers).find(obj=>obj.p1.p1name==`${name}` || obj.p2.p2name==`${name}`)
+
+         p1id=foundobj.p1.p1move
+         p2id=foundobj.p2.p2move
+
+         if ((foundobj.sum)%2==0){
+            document.getElementById("whosTurn").innerText="O's Turn"
+         }
+         else{
+            document.getElementById("whosTurn").innerText="X's Turn"
+         }
+
+         if (p1id!=''){
+            document.getElementById(`${p1id}`).innerText="X"
+            document.getElementById(`${p1id}`).disabled=true
+            document.getElementById(`${p1id}`).style.color="black"
+         }
+          if (p2id!=''){
+            document.getElementById(`${p2id}`).innerText="X"
+            document.getElementById(`${p2id}`).disabled=true
+            document.getElementById(`${p2id}`).style.color="black"
+         }
+
+         check(name, foundObject.sum)
+    })
+
 </script>
 </html>
