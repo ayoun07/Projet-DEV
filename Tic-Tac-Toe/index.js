@@ -78,6 +78,12 @@ io.on("connection",(socket)=>{
 
 })
 
+// Ajoutez une variable pour suivre le tour actuel
+let currentTurn = "X";
+
+
+
+
 
 
 
