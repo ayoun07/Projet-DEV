@@ -1,7 +1,7 @@
 <?php
     require_once 'Connect.php';
 
-    use PDOException;
+    //use PDOException;
 
     class Crud extends Connect
     {
@@ -11,9 +11,7 @@
             try {
                 $sql = "SELECT * FROM $table";
                 $res = $this->_dbh->query($sql);
-                echo '<pre>';
-                print_r($res->fetchAll(\PDO::FETCH_ASSOC));
-                echo '<pre>';
+                return $res->fetchAll(\PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
                 echo 'ERREUR :' . $e->getMessage();
             }

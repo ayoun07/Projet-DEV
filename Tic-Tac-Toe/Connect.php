@@ -15,7 +15,7 @@
 
         public static function PDO($_credentials, $_dbname){
             if (isset($_dbname)){
-                $dsn = "mysql:host=$_credentials->servername;dbname=$_credentials->dbname1";
+                $dsn = "mysql:host=$_credentials->servername;dbname=$_credentials->dbname";
             }
             else {
                 $dsn = "mysql:host=$_credentials->servername";

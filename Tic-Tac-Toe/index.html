@@ -72,6 +72,26 @@
         background-color: rgb(0, 0, 0);
     }
 
+    #add {
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        padding: 7px;
+        border-radius: 10px;
+        width: 250px;
+        background-color: rgb(0, 0, 0);
+    }
+
+    #view {
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        padding: 7px;
+        border-radius: 10px;
+        width: 250px;
+        background-color: rgb(0, 0, 0);
+    }
+
     .btn:hover {
         background-color: rgb(226, 228, 230);
     }
@@ -105,6 +125,18 @@
         <input type="text" placeholder="Name" id="name" autocomplete="off">
     </div>
     <button id="find">Search for a player</button>
+      <script>
+        function redirectToPage() {
+            window.location.href = "Add.php"; // Redirige vers add.php
+        }
+    </script>
+    <button onclick="redirectToPage()" id="add">Ajouter un joueur</button>
+    <button onclick="redirectToPage1()" id="view">Voir tous les joueurs</button>
+    <script>
+        function redirectToPage1() {
+            window.location.href = "View.php"; // Redirige vers add.php
+        }
+    </script>
     <img id="loading" src="loading-loading-forever.gif" alt="">
 
     <div id="bigcont">
